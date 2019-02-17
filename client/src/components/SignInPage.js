@@ -8,7 +8,7 @@ const HOURS_AFTER_CLASS = 1;
 const [nBound, eBound, sBound, wBound] = [37.876012, -122.259181, 37.875334, -122.259342];
 const cookies = new Cookies();
 
-const DEV = true
+const DEV = false
 
 class SignInPage extends Component {
 	state = {
