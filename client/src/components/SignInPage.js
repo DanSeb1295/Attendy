@@ -168,7 +168,7 @@ class Spin extends Component {
 	      	<div style={{display: 'inline-block', margin:'auto', marginBottom: '20px', width: '75%', backgroundColor: "#f0f0f0"}}>
 	      		<Spinner style={{height: '2rem', width: '2rem', margin: '.7rem'}} type="grow" color="warning" />
 	      	</div>
-	      	<div style={{backgroundColor: "#f0f0f0", display: 'inline-block'}}>
+	      	<div style={{backgroundColor: "#f0f0f0"}}>
 	      		<h2 style={{color: 'light', marginTop: '3rem', fontFamily: 'monospace', fontSize: 'medium'}}> Checking &nbsp; Location </h2>
 	      	</div>
 	      </div>
