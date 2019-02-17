@@ -1,0 +1,35 @@
+.navbar-brand {
+    color:  #fdf5e6;
+    text-align: center;
+}
+
+.navbar {
+	background: rgba(255, 255, 255, 0.3);
+}
+
+.remove-btn {
+	margin-right: 0.5rem;
+}
+
+.fade-enter {
+	text-align: center;
+	opacity: 0.01;
+}
+
+.fade-enter-active {
+	text-align: center;
+	opacity: 1;
+	transition: opacity 3000ms ease-in;
+}
+
+.fade-exit {
+	text-align: center;
+	opacity: 1;
+}
+
+.fade-exit-active {
+	text-align: center;
+	opacity: 0.01;
+	transition: opacity 1000 ease-in;
+
+}
