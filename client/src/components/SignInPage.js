@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 const HOURS_START_CLASS = 14;
 const HOUR_END_CLASS = 17;
 const HOURS_AFTER_CLASS = 1;
-const [nBound, eBound, sBound, wBound] = [37.876012, 122.259018, 37.875334, -122.259342];
+const [nBound, eBound, sBound, wBound] = [37.876012, -122.259018, 37.875334, -122.259342];
 
 const cookies = new Cookies();
 
