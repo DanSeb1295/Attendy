@@ -88,7 +88,7 @@ class AttForm extends Component {
 		const currentTime = new Date();
 		const submitted = cookies.get('submitted');
 		const formOpen = currentTime.getHours() >= HOURS_START_CLASS && currentTime.getHours() <= HOUR_END_CLASS + HOURS_AFTER_CLASS
-		var allowSubmit = currentTime.getDay() === 2 && !submitted && !formOpen;
+		var allowSubmit = Number(currentTime.getDay()) === 2 && !submitted && formOpen;
 		if (DEV) { allowSubmit = true };
 		const isEnabled = sid.toString().length === 10 && firstName && lastName && allowSubmit;
 
