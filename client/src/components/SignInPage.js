@@ -95,8 +95,8 @@ class AttForm extends Component {
 
 		return(
 			<div style={{paddingTop: '4rem', margin: 'auto', backgroundColor: "#f0f0f0"}}>
-				<Fade onSubmit={this.handleSubmit} in={true} tag="h5" className="mt-3" margin='0'>
-        			<Form style={{padding: '4rem', alignItems: 'center', justifyContent: 'center'}}>
+				<Fade in={true} tag="h5" className="mt-3" margin='0'>
+        			<Form onSubmit={this.handleSubmit} style={{padding: '4rem', alignItems: 'center', justifyContent: 'center'}}>
 				          <FormGroup style={{marginBottom: '2rem'}}>
 				            <Label style={{fontFamily: 'monospace', fontSize: 'medium'}}>SID</Label>
 				            <Input type="number" pattern="[0-9]*" name="sid" id="sid" placeholder="Enter 10-digit SID" value={this.state.sid} onChange={this.handleChange}/>
