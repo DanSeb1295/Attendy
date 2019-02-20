@@ -10,6 +10,7 @@ const [nBound, eBound, sBound, wBound] = [37.876012, -122.259018, 37.875334, -12
 const cookies = new Cookies();
 
 const DEV = true
+const RESET_COOKIES = false
 
 class SignInPage extends Component {
 	state = {
@@ -41,8 +42,10 @@ class SignInPage extends Component {
 
 	render = () => {
 		if (DEV) {
-			// cookies.remove('submitted');
 			this.state.inClass = true;
+			if (RESET_COOKIES) {
+				cookies.remove('submitted');
+			}
 		}
 		const submitted = cookies.get('submitted');
 		return(
@@ -86,7 +89,7 @@ class AttForm extends Component {
 	};
 
 	render(){
-		// if (DEV) { cookies.remove('submitted') }
+		if (RESET_COOKIES) { cookies.remove('submitted') }
 		console.log(cookies.getAll())
 		const { sid, firstName, lastName } = this.state;
 		const currentTime = new Date();
@@ -148,7 +151,7 @@ class Submitted extends Component {
 		      	<Jumbotron style={{backgroundColor: "#f0f0f0"}}>
 			      	<div style={{margin: '2rem'}}>
 			        <h1 className="display-3" style={{fontSize: 'xx-large'}}>SUBMITTED!</h1>
-			        <p className="lead"> You have already submitted your attendance for this week.</p>
+			        <p className="lead"> You have submitted your attendance for this week.</p>
 			        <hr className="my-2" />
 			        <p>Please access this form again next week!</p>
 			        </div>

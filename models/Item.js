@@ -29,4 +29,4 @@ const ItemSchema = new Schema({
 	}
 })
 
-module.exports = Item = mongoose.model(`Attendance ${fullDate}`, ItemSchema);
+module.exports = Item = mongoose.model(`${fullDate}`, ItemSchema);
