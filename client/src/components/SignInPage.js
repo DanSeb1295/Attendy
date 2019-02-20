@@ -9,7 +9,7 @@ const [nBound, eBound, sBound, wBound] = [37.876012, -122.259018, 37.875334, -12
 
 const cookies = new Cookies();
 
-const DEV = false
+const DEV = true
 
 class SignInPage extends Component {
 	state = {
