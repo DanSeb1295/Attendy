@@ -9,7 +9,7 @@ const [nBound, eBound, sBound, wBound] = [37.876012, -122.259018, 37.875334, -12
 
 const cookies = new Cookies();
 
-const DEV = true
+const DEV = false
 
 class SignInPage extends Component {
 	state = {
@@ -81,7 +81,7 @@ class AttForm extends Component {
   			.then(res => res.json())
   			.then(json => {
   				console.log(json);
-  				window.location = 'submitted';
+  				window.location = '/'
   			})
 	};
 
@@ -94,7 +94,7 @@ class AttForm extends Component {
 		const formOpen = currentTime.getHours() >= HOURS_START_CLASS && currentTime.getHours() <= HOUR_END_CLASS + HOURS_AFTER_CLASS
 		var allowSubmit = Number(currentTime.getDay()) === 2 && !submitted && formOpen;
 		if (DEV) { allowSubmit = true };
-		const isEnabled = sid.toString().length === 10 && firstName && lastName && allowSubmit;
+		const isEnabled = firstName && lastName && allowSubmit;
 
 
 		return(
