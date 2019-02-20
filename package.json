@@ -17,7 +17,7 @@
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "express": "^4.16.4",
-    "mongoose": "^5.4.13",
+    "mongoose": "^5.4.14",
     "react-google-location": "^1.2.2"
   },
   "devDependencies": {

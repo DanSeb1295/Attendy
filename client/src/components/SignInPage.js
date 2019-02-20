@@ -9,7 +9,7 @@ const [nBound, eBound, sBound, wBound] = [37.876012, -122.259018, 37.875334, -12
 
 const cookies = new Cookies();
 
-const DEV = false
+const DEV = true
 
 class SignInPage extends Component {
 	state = {
@@ -41,7 +41,7 @@ class SignInPage extends Component {
 
 	render = () => {
 		if (DEV) {
-			// cookies.remove('submitted');
+			cookies.remove('submitted');
 			this.state.inClass = true;
 		}
 		const submitted = cookies.get('submitted');
@@ -82,7 +82,7 @@ class AttForm extends Component {
 	};
 
 	render(){
-		// if (DEV) { cookies.remove('submitted') }
+		if (DEV) { cookies.remove('submitted') }
 		console.log(cookies.getAll())
 		const { sid, firstName, lastName } = this.state;
 		const currentTime = new Date();
