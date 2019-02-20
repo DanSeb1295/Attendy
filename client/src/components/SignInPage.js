@@ -14,7 +14,7 @@ const DEV = true
 class SignInPage extends Component {
 	state = {
 		loading: true,
-		inClass: false
+		inClass: false,
 	}
 
 	componentDidMount() {
@@ -41,15 +41,15 @@ class SignInPage extends Component {
 
 	render = () => {
 		if (DEV) {
-			cookies.remove('submitted');
+			// cookies.remove('submitted');
 			this.state.inClass = true;
 		}
 		const submitted = cookies.get('submitted');
 		return(
 			<div>
-				{this.state.loading && <Spin />}
-				{!this.state.loading && this.state.inClass && !submitted && <AttForm />}
+				{this.state.loading && !submitted && <Spin />}
 				{!this.state.loading && this.state.inClass && submitted  && <Submitted />}
+				{!this.state.loading && this.state.inClass && !submitted && <AttForm />}
 				{!this.state.loading && !this.state.inClass && <AccDenied />}
 			</div>
 		);
@@ -66,6 +66,7 @@ class AttForm extends Component {
 	handleChange = (e) => this.setState({[e.target.name]: e.target.value });
 	
 	handleSubmit = (e) => {
+		e.preventDefault();
 		var exp = new Date();
 		exp.setDate(exp.getDate() + 1);
 		cookies.set('submitted', 'true', { path: '/', expires: exp} )
@@ -78,11 +79,14 @@ class AttForm extends Component {
 			body: JSON.stringify(this.state)
 		})
   			.then(res => res.json())
-  			.then(json => console.log(json))
+  			.then(json => {
+  				console.log(json);
+  				window.location = 'submitted';
+  			})
 	};
 
 	render(){
-		if (DEV) { cookies.remove('submitted') }
+		// if (DEV) { cookies.remove('submitted') }
 		console.log(cookies.getAll())
 		const { sid, firstName, lastName } = this.state;
 		const currentTime = new Date();
